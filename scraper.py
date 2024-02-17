@@ -115,7 +115,7 @@ def extract_next_links(url, resp):
             # count the relative path of the URL for trap detection 
             relative = url.rsplit('/', 1)[0] + "/"
             relative_count[relative] = relative_count.get(relative, 0) + 1
-            if relative_count[relative] > 30: 
+            if relative_count[relative] > 40: 
                 return links 
 
             # crawling/scrapping - find all the hyperlinks in the page
@@ -195,7 +195,6 @@ def is_valid(url):
         # make sure to return only URLs that are within the domains and paths specified
         netloc = parsed.netloc
         allowed_domains = [".ics.uci.edu", ".cs.uci.edu", ".informatics.uci.edu", ".stat.uci.edu"]
-        # allowed_domains = [".stat.uci.edu"]
         if not any(domain in netloc for domain in allowed_domains):
             return False
 
@@ -203,8 +202,8 @@ def is_valid(url):
         if "action=download" in parsed.query:
             return False
 
-       if "action=upload" in parsed.query: 
-            return False 
+        if "action=upload" in parsed.query: 
+            return False
 
         if "ical=1" in parsed.query:
             return False 
