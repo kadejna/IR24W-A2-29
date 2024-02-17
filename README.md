@@ -1,3 +1,9 @@
+Group: IR24W-A2 29 
+Members: 
+Kade Na, nakj, 20392061
+Subin Kim, subinlk, 73638401
+Jefferey Chea, jlchea, 78777143
+
 ## ABOUT
 
 This is the base implementation of a full crawler that uses a spacetime
